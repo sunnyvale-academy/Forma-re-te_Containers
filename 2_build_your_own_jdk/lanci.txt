@@ -1,0 +1,16 @@
+ocker run \
+        --rm \
+        docker-test:jdk17
+
+docker run \
+         --rm \
+         -c 512 \
+         -m 512MB \
+         docker-test:jdk17
+
+docker run \
+        --rm \
+        --cpuset-cpus 0 \
+        -m 512MB \
+        -e JAVA_OPT="-XX:+UnlockExperimentalVMOptions" \
+        docker-test:jdk17
