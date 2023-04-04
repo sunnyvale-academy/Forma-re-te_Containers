@@ -1,0 +1,9 @@
+FROM node:argon
+# Sono un commento!
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+COPY app /usr/src/
+RUN npm install
+COPY . /usr/src/app
+EXPOSE 8080
+CMD [ "npm", "start" ]
